@@ -9,7 +9,7 @@ function plugin_install()
         url VARCHAR( 255 ) NOT NULL ,
         texte TINYTEXT NOT NULL ,
         PRIMARY KEY ( id )
-        );
+        ) Engine=MyISAM COLLATE=utf8_general_ci;
   ';
   pwg_query($q);
   $q = 'CREATE TABLE IF NOT EXISTS ' . $prefixeTable . 'mp_music (
@@ -19,13 +19,13 @@ function plugin_install()
         url VARCHAR( 255 ) NOT NULL ,
         nom VARCHAR( 255 ) NOT NULL ,
         PRIMARY KEY ( id )
-        );
+        ) Engine=MyISAM COLLATE=utf8_general_ci;
   ';
   pwg_query($q);
   $q = '
         INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
         VALUES
-        ("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
+        ("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thÃ¨me");';
   pwg_query($q);
 
   $q = '
@@ -89,7 +89,7 @@ WHERE param IN (\'mp_lecteur\')
   $q = '
 INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
 VALUES
-("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
+("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thÃ¨me");';
   pwg_query($q);
  } 
  else {
@@ -108,7 +108,7 @@ WHERE param IN (\'mp_lecteur\')
       $q = '
         INSERT INTO ' . CONFIG_TABLE . ' (param,value,comment)
         VALUES
-        ("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thème");';
+        ("mp_lecteur" , "148,300,128,true,128,false,list,0,true,./template/style/default.conf.php,true" , "Lecteur config : haut tt, larg tt, haut pl, miniature, larg min, shuffle, repeat, autostart, autoscroll, style, style pour chaque thÃ¨me");';
       pwg_query($q);
    }
  }
